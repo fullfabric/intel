@@ -7,8 +7,10 @@ class Intel::Authorization
       intel_access: {
         description: "Intel access",
         includes: [],
-        resources: [ "Intel::Classes::DimensionsController",
-                     "Intel::Classes::StatesController" ]
+        resources: [
+          "Intel::Classes::DimensionsController",
+          "Intel::V1::Classes::StatesController"
+        ]
       }
 
     }

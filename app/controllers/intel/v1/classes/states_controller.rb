@@ -1,4 +1,4 @@
-class Intel::Classes::StatesController < Api::BaseController
+class Intel::V1::Classes::StatesController < Api::BaseController
 
   def index
 
@@ -15,6 +15,7 @@ class Intel::Classes::StatesController < Api::BaseController
     render json: data.as_json
 
   end
+
 
   def weekly
 
@@ -51,7 +52,9 @@ class Intel::Classes::StatesController < Api::BaseController
 
   end
 
+
   private
+
 
     def facts
 
