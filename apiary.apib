@@ -1,47 +1,46 @@
 FORMAT: 1A
-HOST: http://www.google.com
+HOST: http://tbs.fullfabric.com
 
 # FF Intel
-Notes API is a *short texts saving* service similar to its physical paper presence on your table.
+The FF Intel API enables you to retrieve data from your FF instance
 
-# Group Notes
-Notes related resources of the **Notes API**
+# Group Classes
+Statistics by **Class**
 
-## Notes Collection [/notes]
-### List all Notes [GET]
+
+## Classes stats [/intel/classes/{id}/states/weekly.json]
+### Get stats by week [GET]
 + Response 200 (application/json)
 
         [{
-          "id": 1, "title": "Jogging in park"
-        }, {
-          "id": 2, "title": "Pick-up posters from post-office"
+            "date": "2012-10-22",
+            "week": "43",
+            "year": "2012",
+            "prospect::new": 200,
+            "prospect::started_application": 100,
+            "applicant::submitted": 50,
+            "applicant::admitted_conditionally": 15,
+            "applicant::admitted": 5,
+            "applicant::accepted": 10,
+            "applicant::enrolled": 0,
+            "applicant::declined": 5,
+            "applicant::rejected": 0,
+            "prospects": 300,
+            "applicants": 85
+        },
+        {
+            "date": "2012-10-29",
+            "week": "44",
+            "year": "2012",
+            "prospect::new": 250,
+            "prospect::started_application": 120,
+            "applicant::submitted": 60,
+            "applicant::admitted_conditionally": 25,
+            "applicant::admitted": 10,
+            "applicant::accepted": 15,
+            "applicant::enrolled": 0,
+            "applicant::declined": 5,
+            "applicant::rejected": 0,
+            "prospects": 370,
+            "applicants": 115
         }]
-
-### Create a Note [POST]
-+ Request (application/json)
-
-        { "title": "Buy cheese and bread for breakfast." }
-
-+ Response 201 (application/json)
-
-        { "id": 3, "title": "Buy cheese and bread for breakfast." }
-
-## Note [/notes/{id}]
-A single Note object with all its details
-
-+ Parameters
-    + id (required, number, `1`) ... Numeric `id` of the Note to perform action with. Has example value.
-
-### Retrieve a Note [GET]
-+ Response 200 (application/json)
-
-    + Header
-
-            X-My-Header: The Value
-
-    + Body
-
-            { "id": 2, "title": "Pick-up posters from post-office" }
-
-### Remove a Note [DELETE]
-+ Response 204
